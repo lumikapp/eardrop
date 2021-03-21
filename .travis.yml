@@ -18,5 +18,4 @@ deploy:
   provider: script
   script: make publish
   on:
-    all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^(main|development)$
+    tags: true
