@@ -3,13 +3,20 @@ from setuptools import find_packages, setup
 
 import eyedrop
 
+
+def readme():
+    with open(f'{pathlib.Path(__file__).parent}/README.md', 'r') as f:
+        return f.read()
+
+
 setup(
     name="eyedrop",
     version=eyedrop.__version__,
-    long_description=f'{pathlib.Path(__file__).parent}/README.md',
+    summary='Gathers colour characteristics from images and videos',
+    long_description=readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/lumikapp/eyedrop/",
-    author="Lumik Ltd.",
+    author=eyedrop.__author__,
     author_email="open_source@lumik.app",
     license="MIT",
     classifiers=[

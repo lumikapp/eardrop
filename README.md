@@ -4,18 +4,18 @@
 [![Documentation Status](https://readthedocs.org/projects/eyedrop/badge/?version=latest)](https://eyedrop.readthedocs.io/en/latest/?badge=latest)
 ![GitHub issues](https://img.shields.io/github/issues/lumikapp/eyedrop)
 ![GitHub](https://img.shields.io/github/license/lumikapp/eyedrop)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/eyedrop)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/lumikapp/eyedrop)](https://github.com/lumikapp/eyedrop/pulls)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/eyedrop)](https://pypi.org/project/eyedrop/)
 [![GitHub Repo stars](https://img.shields.io/github/stars/lumikapp/eyedrop)](https://github.com/lumikapp/eyedrop/stargazers)
 
 # Eyedrop
 
-- Introduction
-- Getting Started
-- Contributing
-- FAQs
+- [About]()
+- [Getting Started]()
+- [FAQs]()
 
 # Getting Started
 
-# Contributing
+# Reporting Bugs / Suggesting Features
 
 # FAQs

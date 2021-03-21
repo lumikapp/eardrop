@@ -1,5 +1,9 @@
 deps:
-	pip install -Ur requirements.txt --no-cache-dir --force-reinstall
+	pip install --upgrade pip
+	pip install -r requirements.txt --no-cache-dir --force-reinstall
+
+versioning:
+	echo $TRAVIS_TAG > eyedrop/versioning.txt
 
 component_test:
 
@@ -16,5 +20,8 @@ packages:
 	python setup.py sdist bdist_wheel
 	twine check dist/*
 
-publish: packages
+all: deps test packages
+
+# Used only by CI/CD
+publish: packages versioning
 	twine upload dist/*
