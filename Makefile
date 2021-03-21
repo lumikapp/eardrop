@@ -3,7 +3,7 @@ deps:
 	pip install -r requirements.txt --no-cache-dir --force-reinstall
 
 versioning:
-	echo $TRAVIS_TAG > eyedrop/versioning.txt
+	echo $(TRAVIS_TAG) > eyedrop/.versioning.txt
 
 component_test:
 

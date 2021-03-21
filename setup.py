@@ -1,7 +1,6 @@
+import os
 import pathlib
 from setuptools import find_packages, setup
-
-import eyedrop
 
 
 def readme():
@@ -9,14 +8,23 @@ def readme():
         return f.read()
 
 
+def version():
+    file = os.path.join(os.path.dirname(__file__), 'eyedrop/.versioning.txt')
+    try:
+        with open(file, 'r') as f:
+            return f.read()
+    except FileNotFoundError:
+        return 'dev.dev.dev'
+
+
 setup(
     name="eyedrop",
-    version=eyedrop.__version__,
+    version=version(),
     summary='Gathers colour characteristics from images and videos',
     long_description=readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/lumikapp/eyedrop/",
-    author=eyedrop.__author__,
+    author='Lumik',
     author_email="open_source@lumik.app",
     license="MIT",
     classifiers=[
