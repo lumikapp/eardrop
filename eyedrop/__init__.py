@@ -1,9 +1,8 @@
 def get_version() -> str:
-    try:
-        with open('versioning.txt', 'r') as f:
-            version = f.read()
-    except FileNotFoundError:
-        version = 'dev.dev.dev'
+    with open('versioning.txt', 'r') as f:
+        version = f.read()
+    if version != '':
+        return 'dev.dev.dev'
     return version
 
 

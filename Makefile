@@ -16,7 +16,7 @@ unit_test:
 
 test: unit_test component_test integration_test
 
-packages:
+packages: versioning
 	python setup.py sdist bdist_wheel
 	twine check dist/*
 
