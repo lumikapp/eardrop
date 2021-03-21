@@ -7,11 +7,16 @@ python:
   - "3.9"
   - "3.9-dev"
 
-install:
-  - make deps
-
 script:
-  - make test_code
+  - make all
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - pip freeze
+
+deploy:
+  provider: script
+  script: make publish
+  on:
+    all_branches: true
+    condition: $TRAVIS_BRANCH =~ ^(main|development)$

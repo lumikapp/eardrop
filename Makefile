@@ -1,5 +1,9 @@
 deps:
-	pip install -Ur requirements.txt --no-cache-dir --force-reinstall
+	pip install --upgrade pip
+	pip install -r requirements.txt --no-cache-dir --force-reinstall
+
+versioning:
+	echo $TRAVIS_TAG > eyedrop/versioning.txt
 
 component_test:
 
@@ -10,14 +14,14 @@ unit_test:
 		--cov-report=term --cov-report=html --cov-report=xml \
 		--cov-branch --cov=eyedrop/src
 
-test_code: unit_test component_test integration_test
+test: unit_test component_test integration_test
 
-test_docs:
+packages:
+	python setup.py sdist bdist_wheel
+	twine check dist/*
 
-test_lint:
+all: deps test packages
 
-test_all: test_lint test_docs test_code
-
-check_deploy:
-
-deploy: test_all check_deploy
+# Used only by CI/CD
+publish: packages versioning
+	twine upload dist/*
