@@ -1,3 +1,1 @@
-from eyedrop import src
-
-print(src.welcome_message())
+__version__: str = '0.0.0'
