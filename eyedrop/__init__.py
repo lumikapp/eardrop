@@ -1,5 +1,9 @@
+import os
+
+
 def get_version() -> str:
-    with open('versioning.txt', 'r') as f:
+    current_dir = os.path.dirname(__file__)
+    with open(os.path.join(current_dir, 'versioning.txt'), 'r') as f:
         version = f.read()
     if version != '':
         return 'dev.dev.dev'
