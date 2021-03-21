@@ -8,7 +8,10 @@ python:
   - "3.9-dev"
 
 install:
-  - pip install -r requirements.txt
+  - make deps
 
 script:
-  - pytest eyedrop/tests/test.py
+  - make test_code
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
