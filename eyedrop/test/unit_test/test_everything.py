@@ -1,6 +1,4 @@
-import pytest
+from eyedrop import src
 
-
-def test_true():
-	assert True
-
+def test_welcome_message():
+	assert src.welcome_message() == 'Welcome to Eyedrop!'
